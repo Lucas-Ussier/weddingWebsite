@@ -1,0 +1,22 @@
+<h2>Confirme sua presença</h2>
+
+<div class="">
+  <div class="input-group mb-3">
+    <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="textName"
+      placeholder="Nome do convidado"
+      aria-label="Nome do convidado"
+      aria-describedby="button-addon2"
+    />
+    <button
+      class="btn btn-outline-secondary"
+      type="button"
+      id="button-addon2"
+      (click)="searchName()"
+    >
+      Pesquisar
+    </button>
+  </div>
+</div>

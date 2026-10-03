@@ -1,0 +1,31 @@
+<app-cabecalho (linkClicked)="onLinkClick($event)"></app-cabecalho>
+
+<div class="conteudo-principal">
+  <div *ngIf="activeLink === 'home'">
+    <img class="foto-principal" src="assets/images/foto_01.JPG" alt="fotoLucas" />
+    <div class="contagem-overlay">
+      <app-contagem-regressiva></app-contagem-regressiva>
+    </div>
+  </div>
+  <div class="conteudo-principal" *ngIf="activeLink === 'confirmar'">
+    <app-confirmar-presenca></app-confirmar-presenca>
+  </div>
+  <div class="conteudo-principal" *ngIf="activeLink === 'galeria'">
+    <app-galeria></app-galeria>
+  </div>
+  <div class="conteudo-principal" *ngIf="activeLink === 'mural'">
+    <app-mural></app-mural>
+  </div>
+  <div class="conteudo-principal" *ngIf="activeLink === 'presentes'">
+    <app-presentes></app-presentes>
+  </div>
+  <div class="conteudo-principal" *ngIf="activeLink === 'padrinhos'">
+    <app-padrinhos></app-padrinhos>
+  </div>
+  <div class="conteudo-principal" *ngIf="activeLink === 'playlist'">
+    <app-playlist></app-playlist>
+  </div>
+  <div class="conteudo-principal" *ngIf="activeLink === 'adm'">
+    <app-adm></app-adm>
+  </div>
+</div>

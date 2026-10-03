@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:host {
+    display: block;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.conteudo-principal {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 80px;
+}
+
+img.foto-principal {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    max-height: 100vh;
+    display: block;
+    object-fit: contain;
+}
+
+.contagem-overlay {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+}
+
+app-contagem-regressiva {
+    display: block;
+    width: 100%;
+}
