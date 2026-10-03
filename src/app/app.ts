@@ -1,8 +1,7 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { NgOptimizedImage } from '@angular/common';
 import { Cabecalho, Links } from './components/cabecalho/cabecalho';
 import { ContagemRegressiva } from './components/contagem-regressiva/contagem-regressiva';
-import { CommonModule } from '@angular/common';
 import { ConfirmarPresenca } from './components/confirmar-presenca/confirmar-presenca';
 import { Adm } from './components/adm/adm';
 import { Galeria } from './components/galeria/galeria';
@@ -16,7 +15,7 @@ import { Presentes } from './components/presentes/presentes';
   imports: [
     Cabecalho,
     ContagemRegressiva,
-    CommonModule,
+    NgOptimizedImage,
     ConfirmarPresenca,
     Galeria,
     Mural,
@@ -24,16 +23,16 @@ import { Presentes } from './components/presentes/presentes';
     Padrinhos,
     Playlist,
     Adm,
-    RouterOutlet,
   ],
   templateUrl: './app.html',
   styleUrl: './app.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class App {
-  activeLink = 'home';
+  readonly Links = Links;
+  readonly activeLink = signal(Links.HOME);
 
   onLinkClick(link: Links): void {
-    console.log(`Link clicado no componente pai: ${link}`);
-    this.activeLink = link;
+    this.activeLink.set(link);
   }
 }

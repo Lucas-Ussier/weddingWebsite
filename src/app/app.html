@@ -1,31 +1,40 @@
 <app-cabecalho (linkClicked)="onLinkClick($event)"></app-cabecalho>
 
-<div class="conteudo-principal">
-  <div *ngIf="activeLink === 'home'">
-    <img class="foto-principal" src="assets/images/foto_01.JPG" alt="fotoLucas" />
-    <div class="contagem-overlay">
-      <app-contagem-regressiva></app-contagem-regressiva>
-    </div>
-  </div>
-  <div class="conteudo-principal" *ngIf="activeLink === 'confirmar'">
+<main class="site-content">
+  @if (activeLink() === Links.HOME) {
+    <section class="home-hero">
+      <img
+        class="foto-principal"
+        ngSrc="assets/images/foto_01.JPG"
+        width="3600"
+        height="2400"
+        alt="Yuri e Lucas juntos"
+        priority
+      />
+      <div class="contagem-overlay">
+        <app-contagem-regressiva></app-contagem-regressiva>
+      </div>
+    </section>
+  }
+  @if (activeLink() === Links.CONFIRMAR) {
     <app-confirmar-presenca></app-confirmar-presenca>
-  </div>
-  <div class="conteudo-principal" *ngIf="activeLink === 'galeria'">
+  }
+  @if (activeLink() === Links.GALERIA) {
     <app-galeria></app-galeria>
-  </div>
-  <div class="conteudo-principal" *ngIf="activeLink === 'mural'">
+  }
+  @if (activeLink() === Links.MURAL) {
     <app-mural></app-mural>
-  </div>
-  <div class="conteudo-principal" *ngIf="activeLink === 'presentes'">
+  }
+  @if (activeLink() === Links.PRESENTES) {
     <app-presentes></app-presentes>
-  </div>
-  <div class="conteudo-principal" *ngIf="activeLink === 'padrinhos'">
+  }
+  @if (activeLink() === Links.PADRINHOS) {
     <app-padrinhos></app-padrinhos>
-  </div>
-  <div class="conteudo-principal" *ngIf="activeLink === 'playlist'">
+  }
+  @if (activeLink() === Links.PLAYLIST) {
     <app-playlist></app-playlist>
-  </div>
-  <div class="conteudo-principal" *ngIf="activeLink === 'adm'">
+  }
+  @if (activeLink() === Links.ADM) {
     <app-adm></app-adm>
-  </div>
-</div>
+  }
+</main>

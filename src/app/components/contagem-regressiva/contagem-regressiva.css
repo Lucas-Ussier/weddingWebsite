@@ -14,9 +14,10 @@ h2{
 .timer-grid {
   display: flex;
   justify-content: center;
-  gap: 12px;
+  gap: 1px;
   margin-top: clamp(8px, 1.5vw, 16px);
   flex-wrap: wrap; /* Garante que quebre linha em telas menores */
+  max-width: 100%; /* Garante que não ultrapasse a largura da tela */
 }
 
 .tempo-box {

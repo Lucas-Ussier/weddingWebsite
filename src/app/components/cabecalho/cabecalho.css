@@ -1,21 +1,28 @@
-.navbar-brand.disabled-link,
-.nav-link.disabled-link {
-  pointer-events: none;
-  cursor: default;
-  opacity: 0.8;
+.navbar-brand img {
+  flex: 0 0 auto;
 }
 
-.navbar-brand.disabled-link,
-.nav-link.disabled-link,
-.navbar-brand.disabled-link:hover,
-.nav-link.disabled-link:hover,
-.navbar-brand.disabled-link:focus,
-.nav-link.disabled-link:focus {
-  text-decoration: none;
+.pinyon-script-regular {
+  font-family: "Pinyon Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
 }
 
 .disabled-link {
   pointer-events: none;
   cursor: not-allowed;
   opacity: 0.8;
+}
+
+.navbar-nav .nav-link {
+  width: 100%;
+  text-align: left;
+}
+
+@media (min-width: 992px) {
+  .navbar-nav .nav-link {
+    width: auto;
+    text-align: center;
+  }
 }

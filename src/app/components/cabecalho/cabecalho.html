@@ -1,97 +1,125 @@
-<nav class="navbar fixed-top bg-body-tertiary">
+<nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand disabled-link" href="#" aria-disabled="true" tabindex="-1">
+    <span class="navbar-brand d-flex align-items-center gap-2 mb-0 pinyon-script-regular">
       <img
-        src="../../../assets/images/logo_teste.png"
-        alt="Logo"
+        ngSrc="assets/images/logo_teste.png"
+        alt=""
         width="50"
         height="50"
-        class="d-inline-block align-text-top"
+        priority
       />
       Yuri e Lucas
-    </a>
+    </span>
 
-    <ul class="nav nav-pills">
-      <li class="nav-item">
-        <a
-          (click)="onLinkClick(Links.HOME)"
-          class="nav-link disabled-link"
-          [class.active]="activeLink === Links.HOME"
-          aria-current="page"
-          aria-disabled="true"
-          tabindex="-1"
-          >Home</a
-        >
-      </li>
-      <li class="nav-item">
-        <a
-          (click)="onLinkClick(Links.CONFIRMAR)"
-          class="nav-link disabled-link"
-          [class.active]="activeLink === Links.CONFIRMAR"
-          aria-disabled="true"
-          tabindex="-1"
-          >Confirmar</a
-        >
-      </li>
-      <li class="nav-item">
-        <a
-          (click)="onLinkClick(Links.PRESENTES)"
-          class="nav-link disabled-link"
-          [class.active]="activeLink === Links.PRESENTES"
-          aria-disabled="true"
-          tabindex="-1"
-          >Presentes</a
-        >
-      </li>
-      <li class="nav-item">
-        <a
-          (click)="onLinkClick(Links.GALERIA)"
-          class="nav-link disabled-link"
-          [class.active]="activeLink === Links.GALERIA"
-          aria-disabled="true"
-          tabindex="-1"
-          >Galeria</a
-        >
-      </li>
-      <li class="nav-item">
-        <a
-          (click)="onLinkClick(Links.MURAL)"
-          class="nav-link disabled-link"
-          [class.active]="activeLink === Links.MURAL"
-          aria-disabled="true"
-          tabindex="-1"
-          >Mural</a
-        >
-      </li>
-      <li class="nav-item">
-        <a
-          (click)="onLinkClick(Links.PADRINHOS)"
-          class="nav-link disabled-link"
-          [class.active]="activeLink === Links.PADRINHOS"
-          aria-disabled="true"
-          tabindex="-1"
-          >Padrinhos</a
-        >
-      </li>
-      <li class="nav-item">
-        <a
-          (click)="onLinkClick(Links.PLAYLIST)"
-          class="nav-link disabled-link"
-          [class.active]="activeLink === Links.PLAYLIST"
-          aria-disabled="true"
-          tabindex="-1"
-          >Playlist</a
-        >
-      </li>
-      <li class="nav-item">
-        <a
-          (click)="onLinkClick(Links.ADM)"
-          class="nav-link disabled-link"
-          aria-disabled="true"
-          tabindex="-1"
-          >__</a
-        >
-      </li>
-    </ul>
+    <button
+      class="navbar-toggler"
+      type="button"
+      aria-controls="main-navigation"
+      [attr.aria-label]="
+        menuExpanded() ? 'Fechar menu de navegação' : 'Abrir menu de navegação'
+      "
+      [attr.aria-expanded]="menuExpanded()"
+      [class.collapsed]="!menuExpanded()"
+      (click)="toggleMenu()"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div
+      id="main-navigation"
+      class="collapse navbar-collapse"
+      [class.show]="menuExpanded()"
+    >
+      <ul class="navbar-nav nav-pills ms-lg-auto">
+        <li class="nav-item">
+          <button
+            type="button"
+            class="nav-link"
+            [class.active]="activeLink() === Links.HOME"
+            [attr.aria-current]="activeLink() === Links.HOME ? 'page' : null"
+            (click)="onLinkClick(Links.HOME)"
+          >
+            Home
+          </button>
+        </li>
+        <li class="nav-item">
+          <button
+            type="button"
+            class="nav-link disabled-link"
+            [class.active]="activeLink() === Links.CONFIRMAR"
+            [attr.aria-current]="activeLink() === Links.CONFIRMAR ? 'page' : null"
+            (click)="onLinkClick(Links.CONFIRMAR)"
+          >
+            Confirmar
+          </button>
+        </li>
+        <li class="nav-item">
+          <button
+            type="button"
+            class="nav-link disabled-link"
+            [class.active]="activeLink() === Links.PRESENTES"
+            [attr.aria-current]="activeLink() === Links.PRESENTES ? 'page' : null"
+            (click)="onLinkClick(Links.PRESENTES)"
+          >
+            Presentes
+          </button>
+        </li>
+        <li class="nav-item">
+          <button
+            type="button"
+            class="nav-link disabled-link"
+            [class.active]="activeLink() === Links.GALERIA"
+            [attr.aria-current]="activeLink() === Links.GALERIA ? 'page' : null"
+            (click)="onLinkClick(Links.GALERIA)"
+          >
+            Galeria
+          </button>
+        </li>
+        <li class="nav-item">
+          <button
+            type="button"
+            class="nav-link disabled-link"
+            [class.active]="activeLink() === Links.MURAL"
+            [attr.aria-current]="activeLink() === Links.MURAL ? 'page' : null"
+            (click)="onLinkClick(Links.MURAL)"
+          >
+            Mural
+          </button>
+        </li>
+        <li class="nav-item">
+          <button
+            type="button"
+            class="nav-link disabled-link"
+            [class.active]="activeLink() === Links.PADRINHOS"
+            [attr.aria-current]="activeLink() === Links.PADRINHOS ? 'page' : null"
+            (click)="onLinkClick(Links.PADRINHOS)"
+          >
+            Padrinhos
+          </button>
+        </li>
+        <li class="nav-item">
+          <button
+            type="button"
+            class="nav-link disabled-link"
+            [class.active]="activeLink() === Links.PLAYLIST"
+            [attr.aria-current]="activeLink() === Links.PLAYLIST ? 'page' : null"
+            (click)="onLinkClick(Links.PLAYLIST)"
+          >
+            Playlist
+          </button>
+        </li>
+        <li class="nav-item">
+          <button
+            type="button"
+            class="nav-link disabled-link"
+            [class.active]="activeLink() === Links.ADM"
+            [attr.aria-current]="activeLink() === Links.ADM ? 'page' : null"
+            (click)="onLinkClick(Links.ADM)"
+          >
+            _
+          </button>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
