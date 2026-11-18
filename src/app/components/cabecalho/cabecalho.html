@@ -1,13 +1,7 @@
-<nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary">
+<nav class="navbar navbar-expand-lg sticky-top">
   <div class="container-fluid">
-    <span class="navbar-brand d-flex align-items-center gap-2 mb-0 pinyon-script-regular">
-      <img
-        ngSrc="assets/images/logo_teste.png"
-        alt=""
-        width="50"
-        height="50"
-        priority
-      />
+    <span class="navbar-brand d-flex align-items-center gap-2 mb-0 fonte-personalizada">
+      <img ngSrc="assets/images/logo.jpg" alt="" width="50" height="50" priority />
       Yuri e Lucas
     </span>
 
@@ -15,9 +9,7 @@
       class="navbar-toggler"
       type="button"
       aria-controls="main-navigation"
-      [attr.aria-label]="
-        menuExpanded() ? 'Fechar menu de navegação' : 'Abrir menu de navegação'
-      "
+      [attr.aria-label]="menuExpanded() ? 'Fechar menu de navegação' : 'Abrir menu de navegação'"
       [attr.aria-expanded]="menuExpanded()"
       [class.collapsed]="!menuExpanded()"
       (click)="toggleMenu()"
@@ -25,11 +17,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div
-      id="main-navigation"
-      class="collapse navbar-collapse"
-      [class.show]="menuExpanded()"
-    >
+    <div id="main-navigation" class="collapse navbar-collapse" [class.show]="menuExpanded()">
       <ul class="navbar-nav nav-pills ms-lg-auto">
         <li class="nav-item">
           <button
@@ -73,6 +61,17 @@
             (click)="onLinkClick(Links.GALERIA)"
           >
             Galeria
+          </button>
+        </li>
+        <li class="nav-item">
+          <button
+            type="button"
+            class="nav-link disabled-link"
+            [class.active]="activeLink() === Links.HISTORIA"
+            [attr.aria-current]="activeLink() === Links.HISTORIA ? 'page' : null"
+            (click)="onLinkClick(Links.HISTORIA)"
+          >
+            Nossa História
           </button>
         </li>
         <li class="nav-item">

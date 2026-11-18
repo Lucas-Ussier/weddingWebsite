@@ -1,0 +1,43 @@
+.foto-principal {
+  object-fit: cover;
+  object-position: center;
+  border-radius: 6%;
+  width: 25vw;
+  height: 25vw;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 18rem));
+  grid-auto-rows: 1fr;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.cards-grid > div {
+  display: flex;
+  width: 100%;
+  max-width: 18rem;
+}
+
+h2 {
+  padding-top: 1rem;
+  font-size: 4rem;
+}
+
+@media (max-width: 767.98px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, minmax(0, 18rem));
+  }
+}
+
+@media (max-width: 575.98px) {
+  .cards-grid {
+    grid-template-columns: minmax(0, 18rem);
+  }
+
+  h2 {
+    padding-top: 0.5rem;
+    font-size: 1.5rem;
+  }
+}
