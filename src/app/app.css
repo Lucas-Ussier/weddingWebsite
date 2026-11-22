@@ -3,6 +3,10 @@
   min-height: 100dvh;
 }
 
+main {
+  background-color: var(--marfim);
+}
+
 .site-content {
   min-height: calc(100dvh - 4.5rem);
 }

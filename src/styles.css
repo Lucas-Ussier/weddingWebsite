@@ -1,5 +1,9 @@
 :root {
-  color-scheme: light;
+  --bege: #E8D7BF;
+  --marfim: #F5EFE5;
+  --dourado: #B99550;
+  --marrom: #51372F;
+  --azul-marinho: #172B49;
 }
 
 html {
@@ -14,4 +18,41 @@ body {
 
 img {
   max-width: 100%;
+}
+
+.font-principal {
+
+}
+
+.fonte-personalizada {
+  font-family: "Pinyon Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
+}
+
+.fonte-personalizada-subtitulo {
+  font-family: "Pinyon Script", cursive;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 2rem;
+}
+
+.foto-principal {
+  display: block;
+  margin: 0 auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 575.98px) {
+  .foto-principal {
+    height: 240px;
+    width: 240px;
+
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
 }

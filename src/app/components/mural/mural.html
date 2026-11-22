@@ -1,3 +1,49 @@
-<section class="container py-4">
-  <p>mural works!</p>
-</section>
+<article class="py-4 d-flex flex-row justify-center gap-4">
+  <img
+    ngSrc="assets/images/foto_03.jpg"
+    alt="Convite de Casamento"
+    class="foto-principal"
+    width="10"
+    height="10"
+  />
+    <img
+    ngSrc="assets/images/foto_03.jpg"
+    alt="Convite de Casamento"
+    class="foto-principal"
+    width="10"
+    height="10"
+  />
+    <img
+    ngSrc="assets/images/foto_03.jpg"
+    alt="Convite de Casamento"
+    class="foto-principal"
+    width="10"
+    height="10"
+  />
+</article>
+<h2 class="text-center mb-4 fonte-personalizada">Deixe uma mensagem para os Noivos:</h2>
+
+<article class="form-field px-5 gap-4">
+  <input type="text" name="name" id="name" class="form-control p-2 " placeholder="Digite seu nome" />
+  <textarea
+    #messageTextarea
+    class="form-control p-2 my-3"
+    id="fieldTextarea"
+    rows="3"
+    maxlength="100"
+    aria-describedby="message-character-limit"
+    (input)="messageCharacterCount.set(messageTextarea.value.length)"
+  ></textarea>
+  <small id="message-character-limit" class="d-block text-muted">
+    {{ messageCharacterCount() }}/100 caracteres.
+  </small>
+  <div class="text-end">
+  <button type="button" class="btn btn-primary p-2" (click)="onClickButton()">Enviar Mensagem</button>
+  </div>
+</article>
+
+<article class="cards-grid px-5">
+  <div *ngFor="let card of cards">
+    <app-card class="p-2" [name]="card.name" [message]="card.message"></app-card>
+  </div>
+</article>

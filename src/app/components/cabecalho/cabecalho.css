@@ -1,12 +1,15 @@
+nav{
+  background-color: var(--bege);
+}
+
 .navbar-brand img {
   flex: 0 0 auto;
 }
 
-.pinyon-script-regular {
-  font-family: "Pinyon Script", cursive;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 2rem;
+nav button.active {
+  background-color: var(--azul-marinho);
+  color: var(--bege);
+  font-weight: bold;
 }
 
 .disabled-link {

@@ -5,10 +5,11 @@ import { ContagemRegressiva } from './components/contagem-regressiva/contagem-re
 import { ConfirmarPresenca } from './components/confirmar-presenca/confirmar-presenca';
 import { Adm } from './components/adm/adm';
 import { Galeria } from './components/galeria/galeria';
-import { Mural } from './components/mural/mural';
+import { NossaHistoria } from './components/nossa-historia/nossa-historia';
 import { Padrinhos } from './components/padrinhos/padrinhos';
 import { Playlist } from './components/playlist/playlist';
 import { Presentes } from './components/presentes/presentes';
+import { Mural } from './components/mural/mural';
 
 @Component({
   selector: 'app-root',
@@ -18,11 +19,12 @@ import { Presentes } from './components/presentes/presentes';
     NgOptimizedImage,
     ConfirmarPresenca,
     Galeria,
-    Mural,
+    NossaHistoria,
     Presentes,
     Padrinhos,
     Playlist,
     Adm,
+    Mural
   ],
   templateUrl: './app.html',
   styleUrl: './app.css',

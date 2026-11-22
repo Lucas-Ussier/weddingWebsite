@@ -1,0 +1,19 @@
+h2 {
+    font-size: 6rem;
+}
+
+.foto-principal{
+  border-radius: 50%;
+}
+
+@media (max-width: 575.98px) {
+  .foto-principal {
+    height: 240px;
+    width: 240px;
+    border-radius: 50%;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+}
